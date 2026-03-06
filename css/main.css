@@ -1,0 +1,529 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+a:focus {
+  outline: 2px solid #282828;
+  outline-offset: 4px;
+  border-radius: 99px;
+}
+
+a:focus img {
+  opacity: 0.8;
+  outline: 2px solid #282828;
+  outline-offset: 4px;
+}
+
+/* MDN – scroll-snap-type reference:
+   https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/scroll-snap-type */
+html {
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #D3D3D3;
+  font-family: "Crimson Pro", "Georgia", serif;
+  color: #282828;
+  font-size: 1.15rem;
+  line-height: 1.4;
+}
+
+h1 {
+  font-family: "Momo Trust Display", system-ui, sans-serif;
+}
+
+h2, h3, h4, a {
+  font-family: "Fraunces", "Times New Roman", serif;
+}
+
+/* ---------- Language toggle ---------- */
+html[data-lang="en"] .lang-zh { display: none !important; }
+html[data-lang="zh"] .lang-en { display: none !important; }
+
+/* language icon button (top-right) */
+.langToggleBtn {
+  /* grid-column: 2; */
+  grid-row: 1 / span 2;
+  align-self: center;
+
+  background: transparent;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+}
+
+.langIcon {
+  width: 32px;
+  height: auto;
+  display: block;
+  opacity: 0.6;
+  transition-duration: 0.4s;
+}
+
+.langToggleBtn:hover .langIcon {
+  opacity: 1;
+}
+
+.langToggleBtn:focus-visible {
+  outline: 2px solid #282828;
+  outline-offset: 8px;
+  border-radius: 99px;
+}
+
+
+
+/* header */
+
+.homeHeader {
+  position: relative;
+  z-index: 1;
+}
+
+.homeNav {
+  display: grid;
+  grid-template-columns: auto auto;
+  column-gap: 2rem;
+  row-gap: 0.25rem;
+  
+  position: absolute;
+  top: 2rem;
+  right: 4rem;
+}
+
+.navButton1 {
+  display: block;
+  position: relative;
+
+  text-decoration: none;
+  color: #282828;
+  overflow: hidden;
+}
+
+.static {
+  display: block;
+  font-size: 1.2rem;
+  transition-duration: 0.4s;
+}
+
+.navButton2 {
+  display: block;
+  position: relative;
+  text-decoration: none;
+  color: #282828;
+  padding-right: 1rem;
+}
+
+/* Pseudo-element references:
+   MDN – ::before
+   https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Selectors/::before
+
+   MDN – ::after
+   https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Selectors/::after
+*/
+.nav-portfolio::after {
+  content: "Portfolios";
+  position: absolute;
+  font-size: 1.2rem;
+  color: #282828;
+  transition-duration: 0.4s;
+}
+
+.nav-about::after {
+  content: "About me";
+  position: absolute;
+  font-size: 1.2rem;
+  color: #282828;
+  transition-duration: 0.4s;
+}
+
+html[data-lang="zh"] .nav-portfolio::after { content: "作品集"; }
+html[data-lang="zh"] .nav-about::after { content: "看看我"; }
+
+.navButton1:hover .static {
+  transform: translateY(-100%);
+}
+
+.navButton1:hover::after {
+  transform: translateY(-100%);
+}
+
+.navButton2::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 0;
+  width: 0.5rem;
+  height: 0.5rem;
+  background-color: #282828;
+  transform-origin: center;
+  transform: scale(0);
+  transform: translateY(-50%) scale(0) rotate(0deg);
+  transition-duration: 0.4s;
+}
+
+.navButton2:hover {
+  opacity: 0.5;
+}
+
+.navButton2:hover::before {
+  transform: translateY(-50%) scale(1) rotate(315deg);
+}
+
+.myFocus {
+  position: fixed;
+  font-size: 0.8rem;
+  top: 1rem;
+  left: 0.5rem;
+  letter-spacing: 0.15rem;
+  color: #888888;
+}
+
+.focus {
+  display: inline-block;
+  margin: 0 0.5rem;
+}
+
+.myHeart {
+  position: fixed;
+  font-size: 0.8rem;
+  transform-origin: right bottom;
+  transform: rotate(90deg);
+  right: 2rem;
+  bottom: 1rem;
+  letter-spacing: 0.15rem;
+  color: #888888;
+}
+
+.myHeart span {
+  display: inline-block; 
+}
+
+.heartIcon {
+  margin-left: 0.5rem;
+  transform: rotate(-90deg);
+}
+
+.myList {
+  position: fixed;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+.listTitle {
+  font-size: 0.85rem;
+}
+
+.listLabel {
+  position: relative;
+  margin-top: 1rem;
+  margin-bottom: 0.25rem;
+  font-size: 0.8rem;
+  letter-spacing: 0.15rem;
+  color: #888888;
+}
+
+.listLabel::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 2.5rem;
+  height: 1px;
+  background-color: #6a8e74;
+  transform: translateY(-0.4rem);
+
+  animation-name: lineMove;
+  animation-duration: 5s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+@keyframes lineMove {
+  0% {
+    width: 2.5rem;
+  }
+
+  50% {
+    width: 5rem;
+  }
+
+  100% {
+    width: 2.5rem;
+  }
+}
+
+/* header */
+
+
+
+/* section */
+
+main {
+  display: block;
+  padding-inline: 10rem;
+}
+
+.hero, .project, .aboutMe {
+  min-height: 100vh;
+  scroll-snap-align: start;
+  
+  display: flex; 
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* section */
+
+
+
+/* top */
+
+.heroTitle {
+  font-family: "Momo Trust Display", sans-serif;
+  text-align: center;
+  font-size: 8vw;
+  margin-top: 6rem;
+  margin-bottom: 4rem;
+  white-space: nowrap;
+  cursor: default;
+}
+
+.heroTitle span {
+  display: inline-block;
+  transition-duration: 0.4s;
+}
+
+.heroTitle span:hover {
+  transform: translateY(-1rem);
+}
+
+.scrollHint {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  font-size: 1rem;
+}
+
+.mouseIcon {
+  width: 18px;
+  height: 28px;
+  border-radius: 100px;
+  border: 2px solid #282828;
+  position: relative;
+}
+
+.mouseWheel {
+  position: absolute;
+  left: 50%;
+  top: 4px;
+  width: 3px;
+  height: 6px;
+  border-radius: 100px;
+  background: #282828;
+
+  animation-name: wheelMove;
+  animation-duration: 1.2s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+
+@keyframes wheelMove {
+  0% {
+    transform: translate(-50%, 0);
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50%, 8px);
+    opacity: 0;
+  }
+}
+
+/* top */
+
+
+
+
+
+
+/* portfolio */
+
+.gameImage {
+  transition-duration: 0.2s;
+  box-shadow: 0 20px 30px rgba(40, 40, 40, 0.1);
+}
+
+.gameImage:hover {
+  transform: scale(1.02);
+  opacity: 0.8;
+  box-shadow: 0 20px 30px rgba(40, 40, 40, 0.5);
+}
+
+/* MDN – cursor reference:
+   https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/cursor#url */
+.imageCursor:hover {
+  cursor: url("../img/view.png") 30 30, pointer;
+}
+
+.project h2 {
+  font-size: 2rem;
+}
+
+.project p {
+  font-size: 1.05rem;
+}
+
+.projectDes {
+  text-align: end;
+  align-self: end;
+  margin-right: 0.25rem;
+}
+
+.gameImage {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.projectButton {
+  display: inline-block;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: 0.6rem 2rem;
+  margin-top: 2rem;
+  border-radius: 99px;
+  border: 1px solid #282828;
+  font-size: 1.5rem;
+  letter-spacing: 0.15rem;
+  color: #282828;
+  text-decoration: none;
+  overflow: hidden;
+}
+
+.projectBtn-text {
+  position: relative;
+}
+
+.projectButton::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: #282828;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition-duration: 0.4s;
+}
+
+.projectButton:hover::before, .projectButton:focus::before {
+  transform: scaleX(1);
+}
+
+.projectButton:hover, .projectButton:focus {
+  color: #D3D3D3;
+  border-color: #282828;
+}
+
+
+/* portfolio */
+
+
+
+
+/* about */
+
+.aboutMe {
+  max-width: 80rem;
+  margin: 0 auto;
+}
+
+.aboutMe h2 {
+  font-size: 3rem;
+  margin-left: 6rem;
+  margin-bottom: 4rem;
+}
+
+.aboutMe h3 {
+  font-size: 1.6rem;
+}
+
+.aboutMe h4 {
+  font-size: 1.2rem;
+  margin: 1rem 0;
+}
+
+.aboutMe .courseWorkH4 {
+  margin-top: 3rem;
+  margin-bottom: 2rem;
+}
+
+.aboutMe h5 {
+  font-size: 1.15rem;
+}
+
+.aboutMe p {
+  font-size: 1.15rem;
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+}
+
+.lineOne, .lineTwo {
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.aboutMe .example {
+  margin-top: 1rem;
+}
+
+.aboutMePhoto {
+  display: block;
+  max-width: 60%;
+  height: auto;
+}
+
+.sfuLogo, .lilithLogo {
+  display: block;
+  width: 100px;
+  height: auto;
+}
+
+.aboutMeSkill {
+  display: block;
+  height: 70px;
+  width: auto;
+}
+
+.skill-item {
+  display: block;
+  justify-self: start;
+}
+
+.skill-item figcaption {
+  margin-top: 1rem;
+  font-size: 0.8rem;
+  text-align: center;
+}
+
+ul {
+  font-size: 1.05rem;
+  margin-left: 1rem;
+}
+
+/* about */
+
+
+

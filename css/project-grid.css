@@ -1,0 +1,193 @@
+.grid {
+    display: grid;
+}
+
+.projectHeader.grid {
+    grid-template-columns: 1fr 1.5fr;
+    column-gap: 2rem;
+    row-gap: 1rem;
+}
+
+.contentGrid {
+    grid-template-columns: 1fr 1fr;
+    column-gap: 4rem;
+}
+
+.newContentGrid {
+    grid-template-columns: 2fr 1fr;
+    column-gap: 4rem;
+    margin-top: 4rem;
+}
+
+.newInsideGrid {
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.panelGrid {
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 0.4rem;
+}
+
+
+
+.insideGrid {
+    grid-template-columns: 1fr 1fr;
+    column-gap: 4rem;
+}
+
+.gameSystemGrid {
+    grid-template-columns: auto auto;
+    column-gap: 2rem;
+    justify-content: start;
+}
+
+.reflectGrid {
+    grid-template-columns: 1fr 2fr;
+    column-gap: 4rem;
+    margin-bottom: 4rem;
+}
+
+
+/* 1280px */
+@media (width < 80rem) {
+    
+    .projectHeader.grid {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .contentGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .newContentGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .projectBottom h4 {
+        text-align: start;
+    }
+
+    .heading {
+        margin: 5rem 10rem;
+        display: block;
+        align-items: center;
+    }
+
+    .projectName {
+        display: block;
+        font-size: 3rem;
+    }
+
+    .genre {
+        display: block;
+        font-size: 1.15rem;
+    }
+
+    h2 {
+        font-size: 2.25rem;
+    }
+
+    .dashLine {
+        display: none;
+    }
+
+    .goalText p {
+        font-size: 3rem;
+        letter-spacing: -0.05rem;
+    }
+
+}
+
+
+/* 850px */
+@media (width < 53.125rem) {
+
+    .goalText p {
+        font-size: 2.5rem;
+    }
+
+    .gameSystemGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .insideGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .reflectGrid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+/* 650px */
+@media (width < 40.625rem) {
+
+    .heading {
+        margin: 4rem;
+    }
+
+    .projectName {
+        font-size: 2.4rem;
+    }
+
+    .genre {
+        font-size: 1.05rem;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    .projectHeader {
+        margin: 0 4rem;
+    }
+
+    .backButton {
+        left: 0.5rem;
+    }
+
+    .backToTopButton {
+        right: 0.75rem;
+    }
+
+    .projectTop, .projectBottom {
+        padding: 5rem 4rem 10rem 4rem;
+    }
+
+    .description {
+        margin-left: 4rem;
+        margin-right: 0;
+    }
+
+    p {
+        font-size: 1.05rem;
+    }
+
+    .projectMiddle h3, .goalText p {
+        font-size: 2rem;
+    }
+
+    .projectMiddle .intro, .otherWorkContent {
+        font-size: 1.2rem;
+    }
+
+    .others {
+        font-size: 3rem;
+    }
+
+    figcaption {
+        font-size: 0.9rem;
+    }
+    
+}
+
+/* 400px */
+@media (width < 25rem) {
+    .projectMiddle h3, .goalText p {
+        font-size: 1.8rem;
+    }
+}

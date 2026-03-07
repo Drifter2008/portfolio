@@ -365,6 +365,7 @@ ul {
   font-weight: lighter;
   margin-left: 1rem;
   margin-bottom: 2rem;
+  list-style-type: square;
 }
 
 .insideImg {

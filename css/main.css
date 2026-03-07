@@ -518,6 +518,7 @@ main {
 ul {
   font-size: 1.05rem;
   margin-left: 1rem;
+  list-style-type: square;
 }
 
 /* about */

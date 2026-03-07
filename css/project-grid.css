@@ -146,12 +146,8 @@
         margin: 0 4rem;
     }
 
-    .backButton {
-        left: 0.5rem;
-    }
-
     .backToTopButton {
-        right: 0.75rem;
+        right: 1rem;
     }
 
     .projectTop, .projectBottom {

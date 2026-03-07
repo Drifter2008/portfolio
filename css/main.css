@@ -91,7 +91,7 @@ html[data-lang="zh"] .lang-en { display: none !important; }
   
   position: absolute;
   top: 2rem;
-  right: 4rem;
+  right: 3rem;
 }
 
 .navButton1 {
@@ -175,7 +175,7 @@ html[data-lang="zh"] .nav-about::after { content: "看看我"; }
 
 .myFocus {
   position: fixed;
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   top: 1rem;
   left: 0.5rem;
   letter-spacing: 0.15rem;
@@ -189,7 +189,7 @@ html[data-lang="zh"] .nav-about::after { content: "看看我"; }
 
 .myHeart {
   position: fixed;
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   transform-origin: right bottom;
   transform: rotate(90deg);
   right: 2rem;
@@ -226,7 +226,7 @@ html[data-lang="zh"] .nav-about::after { content: "看看我"; }
   position: relative;
   margin-top: 1rem;
   margin-bottom: 0.25rem;
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   letter-spacing: 0.15rem;
   color: #888888;
 }
@@ -311,7 +311,8 @@ main {
   align-items: center;
   justify-content: center;
   gap: 1rem;
-  font-size: 1rem;
+  font-size: 0.75rem;
+  color: #888888;
 }
 
 .mouseIcon {
@@ -382,10 +383,6 @@ main {
   font-size: 2rem;
 }
 
-.project p {
-  font-size: 1.05rem;
-}
-
 .projectDes {
   text-align: end;
   align-self: end;
@@ -407,7 +404,7 @@ main {
   margin-top: 2rem;
   border-radius: 99px;
   border: 1px solid #282828;
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   letter-spacing: 0.15rem;
   color: #282828;
   text-decoration: none;
@@ -514,7 +511,7 @@ main {
 
 .skill-item figcaption {
   margin-top: 1rem;
-  font-size: 0.8rem;
+  font-size: 0.95rem;
   text-align: center;
 }
 

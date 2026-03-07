@@ -53,18 +53,10 @@
     margin-left: 6rem;
   }
 
-  .project h2 {
-    font-size: 1.6rem;
-  }
-
-  .project p {
-    font-size: 0.95rem;
-  }
-
   .projectButton {
     padding: 0.5rem 1.8rem;
     margin-top: 1.5rem;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
   }
   
 }
@@ -180,7 +172,7 @@
   }
 
   ul {
-    font-size: 0.9rem;
+    font-size: 0.95rem;
     margin-left: 1rem;
   }
 
@@ -203,7 +195,7 @@
   }
 
   .aboutMe h3 {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
   }
 
   .aboutMe h4 {
@@ -220,23 +212,26 @@
     margin: 1rem 0;
   }
 
+  ul {
+    font-size: 0.85rem;
+    margin-left: 1rem;
+  }
 
   .project h2 {
-    font-size: 1.4rem;
+    font-size: 1.6rem;
   }
 
   .project p {
-    font-size: 0.85rem;
+    font-size: 0.95rem;
   }
 
   .projectButton {
     padding: 0.4rem 1.6rem;
-    font-size: 0.8rem;
+    font-size: 1rem;
     margin-top: 1rem;
     margin-bottom: 0.5rem;
   }
 
-  
 }
 
 /* 560px */
@@ -246,11 +241,6 @@
     grid-template-columns: 1fr 1fr;
     gap: 2rem;
   }
-
-  .homeNav {
-    right: 2rem;
-  }
-
 
 }
 

@@ -12,6 +12,7 @@
 
     <script src="js/lightbox.js" defer></script>
     <script src="js/lang-toggle.js" defer></script>
+    <script src="js/wip-gallery.js" defer></script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -347,38 +348,60 @@
                         </span>
                     </p>
 
-                    <div class="contentGrid grid">
-                        <figure>
-                            <img src="img/410/firespellPage.png" alt="Spells panel" width="1100" height="820">
-                            <figcaption>
-                                <span class="lang-en">Spells Page</span>
-                                <span class="lang-zh">法术页面</span>
-                            </figcaption>
-                        </figure>
+                    <div class="wipGallery" data-wip-gallery>
+                        <div class="wipCarousel" role="region" aria-label="Work in Progress gallery">
+                            <div class="wipCarousel-viewport">
+                                <button class="wipCarousel-btn wipCarousel-prev" type="button" aria-label="Previous page">←</button>
+                                <button class="wipCarousel-btn wipCarousel-next" type="button" aria-label="Next page">→</button>
 
-                        <figure>
-                            <img src="img/410/blessPage.png" alt="Bless panel" width="1100" height="820">
-                            <figcaption>
-                                <span class="lang-en">Bless Page</span>
-                                <span class="lang-zh">祝福页面</span>
-                            </figcaption>
-                        </figure>
+                                <div class="wipCarousel-track">
+                                    <figure class="wipCard">
+                                        <img src="img/410/firespellPage.png" alt="Spells panel" width="1100" height="820">
+                                        <figcaption>
+                                            <span class="lang-en">Spells Page</span>
+                                            <span class="lang-zh">法术页面</span>
+                                        </figcaption>
+                                    </figure>
 
-                        <figure>
-                            <img src="img/410/notePage.png" alt="Note panel" width="1100" height="820">
-                            <figcaption>
-                                <span class="lang-en">Note Page</span>
-                                <span class="lang-zh">笔记页面</span>
-                            </figcaption>
-                        </figure>
+                                    <figure class="wipCard">
+                                        <img src="img/410/blessPage.png" alt="Bless panel" width="1100" height="820">
+                                        <figcaption>
+                                            <span class="lang-en">Bless Page</span>
+                                            <span class="lang-zh">祝福页面</span>
+                                        </figcaption>
+                                    </figure>
 
-                        <figure>
-                            <img src="img/410/settingsPage.png" alt="Settings panel" width="1100" height="820">
-                            <figcaption>
-                                <span class="lang-en">Settings Page</span>
-                                <span class="lang-zh">设置页面</span>
-                            </figcaption>
-                        </figure>
+                                    <figure class="wipCard">
+                                        <img src="img/410/notePage.png" alt="Note panel" width="1100" height="820">
+                                        <figcaption>
+                                            <span class="lang-en">Note Page</span>
+                                            <span class="lang-zh">笔记页面</span>
+                                        </figcaption>
+                                    </figure>
+
+                                    <figure class="wipCard">
+                                        <img src="img/410/settingsPage.png" alt="Settings panel" width="1100" height="820">
+                                        <figcaption>
+                                            <span class="lang-en">Settings Page</span>
+                                            <span class="lang-zh">设置页面</span>
+                                        </figcaption>
+                                    </figure>
+                                </div>
+
+                                <div class="wipCarousel-overlay" aria-hidden="true"></div>
+
+                                <div class="wipCarousel-copy" aria-hidden="true">
+                                    <p>
+                                        <span class="lang-en">
+                                            Selected in-progress Shell Menu pages showing the evolving information hierarchy, page framing, and readability direction of the final in-game menu.
+                                        </span>
+                                        <span class="lang-zh">
+                                            当前展示的是进行中的 Shell Menu 页面，用于呈现最终游戏菜单在信息层级、页面框架与可读性方向上的持续迭代。
+                                        </span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 

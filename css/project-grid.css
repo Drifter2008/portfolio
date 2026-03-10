@@ -120,6 +120,34 @@
         grid-template-columns: 1fr;
     }
 
+    .wipCarousel-copy {
+        top: calc(var(--wip-card-height) + 3rem);
+        right: var(--wip-main-x);
+        bottom: auto;
+        left: var(--wip-main-x);
+        display: block;
+        padding: 0;
+        text-align: left;
+    }
+
+    .wipCarousel-copy p {
+        max-width: none;
+    }
+
+    .wipCarousel-overlay {
+        display: none;
+    }
+
+    .wipCarousel-viewport {
+        min-height: calc(var(--wip-card-height) + 11rem);
+    }
+
+    .wipCarousel-btn {
+        --wip-btn-size: 2rem;
+        width: var(--wip-btn-size);
+        height: var(--wip-btn-size);
+        font-size: 1rem;
+    }
 }
 
 

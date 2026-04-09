@@ -345,17 +345,26 @@ iframe {
 }
 
 .myWork h5 {
-  display: block;
-  padding: 0.1rem 1rem;
+  position: relative;
+  display: inline-block;
+  padding: 0.15rem 1.2rem;
   margin-bottom: 0.5rem;
-  background-color: #FFE45E;
   color: #282828;
   font-size: 0.95rem;
-  font-weight: bolder;
+  font-weight: bold;
   letter-spacing: 0.15em;
-  justify-self: start;
+  z-index: 0;
   transition-duration: 0.2s;
   cursor: default;
+}
+
+.myWork h5::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: #FFE45E;
+  transform: skewX(-20deg);
+  z-index: -1;
 }
 
 .workLeft {

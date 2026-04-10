@@ -215,6 +215,7 @@ p {
   font-size: 1.15rem;
   margin-bottom: 2rem;
   font-weight: lighter;
+  max-width: 67.5rem;
 }
 
 .overview p {
@@ -376,6 +377,7 @@ ul {
   margin-left: 1rem;
   margin-bottom: 2rem;
   list-style-type: square;
+  max-width: 67.5rem;
 }
 
 .insideImg {
@@ -615,6 +617,7 @@ body.lightbox-open {
 
 .wipCarousel {
   position: relative;
+  margin-bottom: 2rem;
 }
 
 .wipCarousel-viewport {
@@ -656,7 +659,7 @@ body.lightbox-open {
 }
 
 .wipCard img {
-  aspect-ratio: 1100 / 820;
+  aspect-ratio: 1157 / 820;
   object-fit: cover;
   box-shadow: 0 18px 50px rgba(0, 0, 0, 0.22);
 }

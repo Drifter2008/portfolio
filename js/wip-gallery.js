@@ -11,7 +11,7 @@
   if (!viewport || !track || cards.length < 2) return;
 
   const BREAKPOINT_COMPACT = "(max-width: 53.125rem)";
-  const CARD_RATIO = 820 / 1100;
+  const CARD_RATIO = 820 / 1157;
   const PREVIEW_SCALE = 0.5;
   const TRANSITION_MS = 520;
   const WHEEL_LOCK_MS = 360;

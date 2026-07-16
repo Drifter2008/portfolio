@@ -241,13 +241,13 @@ html[data-lang="zh"] .nav-about::after { content: "看看我"; }
   background-color: #6a8e74;
   transform: translateY(-0.4rem);
 
-  animation-name: lineMove;
+  /* animation-name: lineMove;
   animation-duration: 5s;
   animation-timing-function: ease-in-out;
-  animation-iteration-count: infinite;
+  animation-iteration-count: infinite; */
 }
 
-@keyframes lineMove {
+/* @keyframes lineMove {
   0% {
     width: 2.5rem;
   }
@@ -259,7 +259,7 @@ html[data-lang="zh"] .nav-about::after { content: "看看我"; }
   100% {
     width: 2.5rem;
   }
-}
+} */
 
 /* header */
 

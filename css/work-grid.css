@@ -1,0 +1,41 @@
+.grid {
+    display: grid;
+}
+
+.libraryGrid.grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    align-items: start;
+    gap: 8rem 2rem;
+}
+
+.projectInfo.grid {
+    grid-template-columns: 0.5rem max-content minmax(0, 1fr);
+    align-items: start;
+    column-gap: 0.5rem;
+}
+
+.pdfItem.grid {
+    grid-template-columns: 3rem minmax(0, 1fr);
+    align-items: center;
+    column-gap: 0.5rem;
+}
+
+
+/* 1280px */
+@media (width <= 80rem) {
+
+    .libraryGrid.grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+}
+
+
+/* 640px */
+@media (width < 40rem) {
+
+    .libraryGrid.grid {
+        grid-template-columns: 1fr;
+    }
+
+}

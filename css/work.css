@@ -195,5 +195,6 @@ html[data-lang="zh"] .lang-en { display: none !important; }
     min-width: 0;
     font-size: 0.75rem;
     overflow-wrap: anywhere;
+    color: #282828;
 }
 

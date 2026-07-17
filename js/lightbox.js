@@ -3,7 +3,7 @@
 
 (() => {
   const SELECTORS = {
-    candidates: "figure img, img.zoomable",
+    candidates: "figure img, img.zoomable, .projectImage img",
     ignoreContainers: ".headerCover, [data-nozoom-container], .lightbox-overlay",
   };
 
@@ -86,7 +86,7 @@
 
     // ✅ 关键修改：caption 不再 escape 成纯文本，否则两种语言会拼一起
     overlayEl.innerHTML = `
-      <button class="lightbox-close" type="button" aria-label="Close (Esc)">×</button>
+      <button class="lightbox-close" type="button" aria-label="Close (Esc)">Close</button>
       <div class="lightbox-inner">
         <img class="lightbox-img" src="${escapeHtml(src)}" alt="${escapeHtml(alt)}" />
         ${captionHtml ? `<div class="lightbox-caption">${captionHtml}</div>` : ""}
@@ -95,6 +95,21 @@
 
     document.body.appendChild(overlayEl);
     document.body.classList.add("lightbox-open");
+
+    /*
+    * Lightbox 刚打开时隐藏鼠标，
+    * 第一次移动鼠标后再显示 zoomOut 图标。
+    */
+    overlayEl.classList.remove("cursor-ready");
+
+    overlayEl.addEventListener(
+      "mousemove",
+      () => {
+        if (!overlayEl) return;
+        overlayEl.classList.add("cursor-ready");
+      },
+      { once: true }
+    );
 
     overlayEl.addEventListener("click", (e) => {
       e.stopPropagation();

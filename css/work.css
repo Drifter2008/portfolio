@@ -82,10 +82,18 @@ html[data-lang="zh"] .lang-en { display: none !important; }
 
 .libraryHeader h1 {
     margin: 0;
-    font-size: clamp(2.5rem, 8vw, 7rem);
+    font-size: clamp(3rem, 8vw, 8rem);
     font-weight: bold;
     font-family: "Momo Trust Display", system-ui, sans-serif;
 }
+
+.libraryHeader .lTitle {
+    margin: 0;
+    font-size: clamp(0.75rem, 2vw, 2rem);
+    font-weight: bold;
+    font-family: "Fraunces", "Times New Roman", serif;
+}
+
 
 .projectCard {
     min-width: 0;
@@ -99,6 +107,18 @@ html[data-lang="zh"] .lang-en { display: none !important; }
 .projectImage img {
     width: 100%;
     height: auto;
+    transition:
+        transform 0.4s ease,
+        opacity 0.4s ease;
+}
+
+.projectImage:hover img {
+    transform: scale(1.02);
+}
+
+.projectImage:focus-within {
+    outline: 2px solid var(--text-primary);
+    outline-offset: 0.25rem;
 }
 
 .projectInfo {
@@ -198,3 +218,133 @@ html[data-lang="zh"] .lang-en { display: none !important; }
     color: #282828;
 }
 
+/* ===== Lightbox (Image Zoom) v5 ===== */
+
+/* 缩略图 hover 放大（裁切由 .zoom-clip 负责） */
+.zoomable--enabled {
+  cursor: url("../img/zoomIn.png") 16 16, pointer;
+  transform-origin: center center;
+  transition: transform 0.15s ease, filter 0.15s ease;
+  will-change: transform;
+}
+
+/* Lightbox 刚打开时隐藏鼠标 */
+.lightbox-overlay,
+.lightbox-inner,
+.lightbox-img,
+.lightbox-caption {
+  cursor: none;
+}
+
+/* 第一次移动鼠标后显示 zoomOut 图标 */
+.lightbox-overlay.cursor-ready,
+.lightbox-overlay.cursor-ready .lightbox-inner,
+.lightbox-overlay.cursor-ready .lightbox-img,
+.lightbox-overlay.cursor-ready .lightbox-caption {
+  cursor: url("../img/zoomOut.png") 16 16, pointer;
+}
+
+.zoomable--enabled:hover {
+  transform: scale(1.04);
+}
+
+/* ✅ 只裁切图片区域（JS 会把 img 包进这个 div） */
+.zoom-clip {
+  display: block;
+  width: 100%;
+  overflow: hidden !important;
+  overflow-x: hidden !important;
+  overflow-y: hidden !important;
+}
+
+/* 避免 img inline 间隙 */
+.zoom-clip > img {
+  display: block;
+  margin: 0; /* 避免你全局 img 的 margin-bottom 影响裁切 */
+}
+
+/* 显式不放大 */
+img[data-nozoom],
+img.nozoom {
+  cursor: inherit;
+  transform: none !important;
+  filter: none !important;
+}
+
+/* 打开 lightbox 时禁止背景滚动 */
+body.lightbox-open {
+  overflow: hidden;
+}
+
+/* Overlay */
+.lightbox-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: clamp(16px, 3vw, 32px);
+  background: rgba(0, 0, 0, 0.78);
+}
+
+/* Inner */
+.lightbox-inner {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+
+  width: fit-content;
+  max-width: 92vw;
+  max-height: 92vh;
+}
+
+/* 弹窗大图 */
+.lightbox-img {
+  display: block;
+  max-width: 92vw;
+  max-height: 86vh;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  margin: 0;
+}
+
+/* Caption */
+.lightbox-caption {
+  max-width: 92vw;
+  color: rgba(255, 255, 255, 0.86);
+  font-size: 0.95rem;
+  text-align: center;
+}
+
+/* 关闭按钮（非圆形 + hover） */
+.lightbox-close {
+  position: fixed;
+  top: clamp(14px, 2vw, 20px);
+  right: clamp(14px, 2vw, 20px);
+  z-index: 10001;
+
+  padding: 10px 14px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  background: black;
+  color: #F4F0E8;
+
+  font-size: 22px;
+  line-height: 1;
+  cursor: pointer;
+
+  border-radius: 99px;
+
+  transition: background 0.15s ease, border-color 0.15s ease, transform 0.15s ease;
+}
+
+.lightbox-close:hover {
+  background: #333333;
+  border-color: rgba(255, 255, 255, 0.75);
+}

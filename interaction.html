@@ -4,17 +4,20 @@
     <head>
         <meta charset="UTF-8">
 
-        <meta
-            name="viewport"
-            content="width=device-width, initial-scale=1.0"
-        >
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <title>INTERACTION LIBRARY</title>
+
+        <script src="js/lang-toggle.js" defer></script>
+        <script src="js/lightbox.js" defer></script>
 
         <link rel="stylesheet" href="css/work.css">
         <link rel="stylesheet" href="css/work-grid.css">
 
-        <script src="js/lang-toggle.js" defer></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,200..900;1,200..900&family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Momo+Trust+Display&display=swap" rel="stylesheet">
+        
     </head>
 
     <body>
@@ -23,14 +26,21 @@
 
             <header class="libraryHeader">
 
-                <h1>
-                    <span class="lang-en">LIBRARY</span>
-                    <span class="lang-zh">项目库</span>
-                </h1>
+                <leftTitle>
+                    <h1 class="lTitle">
+                        <span class="lang-en">Selected Interaction Design Work</span>
+                        <span class="lang-zh">交互设计作品集</span>
+                    </h1>
+                    
+                    <h1>
+                        <span class="lang-en">LIBRARY</span>
+                        <span class="lang-zh">项目库</span>
+                    </h1>
+                </leftTitle>
 
                 <nav>
                     <button id="langToggle" class="langToggleBtn" type="button" aria-label="Switch language">
-                        <img src="img/language.png" class="langIcon" width="64" height="64" alt="">
+                        <img src="img/language.png" class="langIcon" width="64" height="64" alt="" data-nozoom>
                     </button>
                 </nav>
             </header>

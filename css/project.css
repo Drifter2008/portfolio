@@ -562,10 +562,26 @@ figcaption.otherCaption::before {
 
 /* 缩略图 hover 放大（裁切由 .zoom-clip 负责） */
 .zoomable--enabled {
-  cursor: zoom-in;
+  cursor: url("../img/zoomIn.png") 16 16, pointer;
   transform-origin: center center;
   transition: transform 0.15s ease, filter 0.15s ease;
   will-change: transform;
+}
+
+/* Lightbox 刚打开时隐藏鼠标 */
+.lightbox-overlay,
+.lightbox-inner,
+.lightbox-img,
+.lightbox-caption {
+  cursor: none;
+}
+
+/* 第一次移动鼠标后显示 zoomOut 图标 */
+.lightbox-overlay.cursor-ready,
+.lightbox-overlay.cursor-ready .lightbox-inner,
+.lightbox-overlay.cursor-ready .lightbox-img,
+.lightbox-overlay.cursor-ready .lightbox-caption {
+  cursor: url("../img/zoomOut.png") 16 16, pointer;
 }
 
 .zoomable--enabled:hover {
@@ -602,6 +618,7 @@ body.lightbox-open {
 
 /* Overlay */
 .lightbox-overlay {
+  cursor: none;
   position: fixed;
   inset: 0;
   z-index: 10000;
@@ -636,7 +653,6 @@ body.lightbox-open {
   width: auto;
   height: auto;
   object-fit: contain;
-  cursor: zoom-out;
   margin: 0;
 }
 
@@ -663,6 +679,8 @@ body.lightbox-open {
   font-size: 22px;
   line-height: 1;
   cursor: pointer;
+
+  border-radius: 99px;
 
   transition: background 0.15s ease, border-color 0.15s ease, transform 0.15s ease;
 }

@@ -6,10 +6,10 @@
 
 :root {
     --text-primary: #282828;
-    --text-secondary: #888888;
+    --text-secondary: #666666;
 
     --tag-background: #EFEFEF;
-    --tag-text: #888888;
+    --tag-text: #666666;
 
     --pdf-background: #d9d9d9;
     --pdf-border: #282828;
@@ -153,6 +153,7 @@ html[data-lang="zh"] .lang-en { display: none !important; }
 }
 
 .tag {
+    font-family: "Crimson Pro", "Georgia", serif;
     display: inline-flex;
     align-items: center;
     height: 1.5rem;
@@ -160,7 +161,7 @@ html[data-lang="zh"] .lang-en { display: none !important; }
     background-color: var(--tag-background);
     border-radius: 0.25rem;
     color: var(--tag-text);
-    font-size: 0.65rem;
+    font-size: 0.75rem;
     line-height: 1;
     white-space: nowrap;
 }
@@ -215,7 +216,6 @@ html[data-lang="zh"] .lang-en { display: none !important; }
     min-width: 0;
     font-size: 0.75rem;
     overflow-wrap: anywhere;
-    color: #282828;
 }
 
 /* ===== Lightbox (Image Zoom) v5 ===== */
